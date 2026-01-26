@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社KATENRAKU | KATENRAKU Inc.</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* 强制隐藏滚动条，直到开屏动画结束，防止用户乱滚 */
+        body.loading { overflow: hidden; height: 100vh; }
+        
+        /* 确保 SVG 线条一开始是看不见的 */
+        .logo-path {
+            opacity: 0; /* JS 加载前隐藏，防止闪烁 */
+        }
+    </style>
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased loading">
 
-    <div class="cursor-dot hidden md:block"></div>
-    <div class="cursor-outline hidden md:block"></div>
-
+    <div id="splash-screen" class="fixed inset-0 z-[9999] bg-[#1a1a1a] flex flex-col items-center justify-center">
+        <div class="relative w-32 h-32 md:w-40 md:h-40 mb-6">
+            <svg viewBox="0 0 100 100" class="w-full h-full overflow-visible">
+                <path class="logo-path" d="M30 20 V80" fill="none" stroke="#f4f2f0" stroke-width="1.5" stroke-linecap="square" />
+                <path class="logo-path" d="M30 50 L70 20" fill="none" stroke="#f4f2f0" stroke-width="1.5" stroke-linecap="square" />
+                <path class="logo-path" d="M30 50 L70 80" fill="none" stroke="#f4f2f0" stroke-width="1.5" stroke-linecap="square" />
+                <rect class="logo-path" x="10" y="10" width="80" height="80" fill="none" stroke="#f4f2f0" stroke-width="0.5" stroke-opacity="0.5" />
+            </svg>
+        </div>
+        
+        <div class="splash-text opacity-0 text-[#f4f2f0] font-serif tracking-[0.3em] text-sm md:text-base font-light">
+            KATENRAKU
+        </div>
+    </div>
     <header class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference text-[#1a1a1a]">
         <h1 class="text-lg font-serif tracking-widest font-bold"><a href="/">KATENRAKU</a></h1>
         <nav class="hidden md:flex space-x-8 text-xs font-eng tracking-widest uppercase">
@@ -29,21 +54,23 @@
     </header>
 
     <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-80 scale-105 parallax-bg" 
-             style="background-image: url('https://images.unsplash.com/photo-1604928141064-207cea6f571f?q=80&w=3028&auto=format&fit=crop'); filter: grayscale(100%) contrast(90%);">
-        </div>
+    <div class="absolute inset-0 bg-cover bg-center parallax-bg"
+         style="background-image: url('https://images.unsplash.com/photo-1604928141064-207cea6f571f?q=80&w=2400&auto=format&fit=crop');
+                filter: grayscale(100%) brightness(135%) contrast(85%) opacity(0.9);">
+    </div>
+    <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
         
         <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between w-full h-[60vh]">
                 <div class="h-full flex items-start pt-20 md:pt-0">
-                    <h2 class="vertical-text text-3xl md:text-5xl font-serif leading-loose animate-text">
+                    <h2 class="vertical-text text-3xl md:text-5xl font-serif leading-loose animate-text opacity-0">
                         都市に、働く場所と、<br>感じる場所を。
                     </h2>
                 </div>
                 <div class="mt-10 md:mt-0 md:text-right">
-                    <p class="font-eng text-xl md:text-2xl italic animate-fade-up">Real Estate that Hosts Culture.</p>
+                    <p class="font-eng text-xl md:text-2xl italic animate-fade-up opacity-0">Real Estate that Hosts Culture.</p>
                     <div class="w-12 h-[1px] bg-black mt-6 ml-auto opacity-50"></div>
-                    <p class="mt-4 text-xs font-serif tracking-widest text-gray-600 animate-fade-up">カテンラク株式会社</p>
+                    <p class="mt-4 text-xs font-serif tracking-widest text-gray-600 animate-fade-up opacity-0">カテンラク株式会社</p>
                 </div>
             </div>
         </div>
@@ -60,12 +87,7 @@
                     <span class="text-xs font-eng text-gray-500">2024.10.20</span>
                     <span class="text-sm font-serif">自社運営ギャラリー「Gallery K」にて企画展を開催</span>
                 </a>
-                <a href="#" class="block py-6 border-b border-gray-300 hover:bg-white transition-colors px-4 -mx-4 flex gap-4 items-center">
-                    <span class="text-xs font-eng text-gray-500">2024.09.15</span>
-                    <span class="text-sm font-serif">Webサイトをリニューアルいたしました</span>
-                </a>
             </div>
-            
             <div class="mt-20 text-center">
                 <a href="/company/" class="inline-block border border-black px-12 py-4 text-xs font-eng tracking-widest hover:bg-black hover:text-white transition-colors">
                     VIEW COMPANY
@@ -75,29 +97,83 @@
     </section>
 
     <footer class="bg-[#1a1a1a] text-white py-12">
-        <div class="container mx-auto px-6 flex justify-between items-center text-xs font-eng text-gray-500">
+        <div class="container mx-auto px-6 text-center text-xs font-eng text-gray-500">
             <p>&copy; KATENRAKU Inc.</p>
-            <p>Designed for Culture.</p>
         </div>
     </footer>
 
     <script>
-        // カーソル追従
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            cursorDot.style.left = `${e.clientX}px`;
-            cursorDot.style.top = `${e.clientY}px`;
-            cursorOutline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        // 注册插件
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 等待页面所有资源（包括图片）加载完毕再执行
+        window.addEventListener("load", () => {
+            
+            // 1. 初始化：计算 SVG 线条长度
+            const paths = document.querySelectorAll(".logo-path");
+            paths.forEach(path => {
+                const length = path.getTotalLength();
+                // 设置 dasharray 和 offset 为线条总长度 -> 这样线条就“隐藏”了
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+                path.style.opacity = 1; // 恢复可见性，准备开始动画
+            });
+
+            // 2. 创建时间轴 (Timeline)
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    // 动画结束后，允许页面滚动
+                    document.body.classList.remove("loading");
+                }
+            });
+
+            tl
+            // A. 线条描边动画
+            .to(".logo-path", {
+                strokeDashoffset: 0, // 偏移量归零 -> 线条画出来
+                duration: 1.5,
+                ease: "power2.inOut",
+                stagger: 0.1
+            })
+            // B. Logo 文字浮现
+            .to(".splash-text", {
+                opacity: 1,
+                y: -5,
+                duration: 1,
+            }, "-=0.5") // 提前 0.5秒开始
+            // C. 幕布拉起
+            .to("#splash-screen", {
+                yPercent: -100, // 向上移动 100%
+                duration: 1.2,
+                ease: "expo.inOut",
+                delay: 0.5
+            })
+            // D. 主页标题浮现 (衔接)
+            .to(".animate-text", {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power3.out"
+            }, "-=0.8")
+            // E. 副标题浮现
+            .to(".animate-fade-up", {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                stagger: 0.2
+            }, "-=1.0");
+
+            // --- 页面其他的滚动视差效果 ---
+            gsap.to(".parallax-bg", {
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: 100
+            });
         });
-        
-        // GSAP Animations
-        gsap.to(".parallax-bg", {
-            scrollTrigger: { trigger: "body", start: "top top", end: "bottom top", scrub: true },
-            y: 100
-        });
-        gsap.from(".animate-text", { y: 30, opacity: 0, duration: 1.5, ease: "power3.out", delay: 0.5 });
-        gsap.from(".animate-fade-up", { y: 20, opacity: 0, duration: 1, stagger: 0.2, delay: 0.8 });
     </script>
 </body>
 </html>

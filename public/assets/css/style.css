@@ -53,3 +53,7 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+/* 确保 SVG 路径过渡平滑（虽然 GSAP 会处理，但这作为 fallback） */
+.logo-path {
+    transition: stroke-dashoffset 0.1s linear; /* GSAP 会覆盖这个，主要是防止闪烁 */
+}
