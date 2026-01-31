@@ -107,50 +107,55 @@
             </div>
 
 <div class="floor-plan-section anim-fade-up">
-                <div class="section-label" data-i18n="label_floorplan">FLOOR PLAN</div>
-                
-                <div class="blueprint-frame">
-                    <div class="blueprint-inner">
-                        
-                        <div class="gallery-viewport">
-                            <div class="gallery-wrapper" id="fp-gallery">
-                                <div class="gallery-slide">
-                                    <img src="https://placehold.co/1200x600/111/666?text=FLOOR+PLAN+1" alt="Floor Plan 1" class="fp-image">
-                                    <div class="slide-caption">Main Hall Layout</div>
-                                </div>
-                                <div class="gallery-slide">
-                                    <img src="https://placehold.co/1200x600/111/666?text=FLOOR+PLAN+2" alt="Floor Plan 2" class="fp-image">
-                                    <div class="slide-caption">Meeting Rooms</div>
-                                </div>
-                                <div class="gallery-slide">
-                                    <img src="https://placehold.co/1200x600/111/666?text=FLOOR+PLAN+3" alt="Floor Plan 3" class="fp-image">
-                                    <div class="slide-caption">Lounge Area</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="fp-grid-overlay"></div>
-                        <div class="fp-marker m-1"></div>
-                        <div class="fp-marker m-2"></div>
-                        <div class="fp-marker m-3"></div>
-                        <div class="fp-marker m-4"></div>
-
-                        <button class="gal-btn gal-prev" onclick="moveGallery(-1)">
-                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                        </button>
-                        <button class="gal-btn gal-next" onclick="moveGallery(1)">
-                            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                        </button>
-                        
-                        <div class="gal-indicators">
-                            <span class="gal-dot active" onclick="jumpGallery(0)"></span>
-                            <span class="gal-dot" onclick="jumpGallery(1)"></span>
-                            <span class="gal-dot" onclick="jumpGallery(2)"></span>
-                        </div>
-
+    <div class="section-label" data-i18n="label_floorplan">FLOOR PLAN</div>
+    
+    <div class="blueprint-frame">
+        <div class="blueprint-inner">
+            
+            <div class="gallery-viewport">
+                <div class="gallery-wrapper" id="fp-gallery">
+                    <div class="gallery-slide">
+                        <img src="assets/img/cafe.png" alt="1F Marble Gallery Cafe floor plan" class="fp-image">
+                        <div class="slide-caption">1F Marble Gallery Cafe</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="assets/img/2F.jpg" alt="2F Gallery Hall floor plan" class="fp-image">
+                        <div class="slide-caption">2F Gallery Hall</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="assets/img/B1F.jpg" alt="B1F Multifunctional Hall floor plan" class="fp-image">
+                        <div class="slide-caption">B1F Multifunctional Hall</div> 
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="assets/img/entry.jpg" alt="Entry area floor plan" class="fp-image">
+                        <div class="slide-caption">Entry</div>
                     </div>
                 </div>
             </div>
+
+            <div class="fp-grid-overlay"></div>
+            <div class="fp-marker m-1"></div>
+            <div class="fp-marker m-2"></div>
+            <div class="fp-marker m-3"></div>
+            <div class="fp-marker m-4"></div>
+
+            <button class="gal-btn gal-prev" onclick="moveGallery(-1)" aria-label="Previous Slide">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="gal-btn gal-next" onclick="moveGallery(1)" aria-label="Next Slide">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            
+            <div class="gal-indicators">
+                <button class="gal-dot active" onclick="jumpGallery(0)" aria-label="Go to slide 1"></button>
+                <button class="gal-dot" onclick="jumpGallery(1)" aria-label="Go to slide 2"></button>
+                <button class="gal-dot" onclick="jumpGallery(2)" aria-label="Go to slide 3"></button>
+                <button class="gal-dot" onclick="jumpGallery(3)" aria-label="Go to slide 4"></button>
+            </div>
+
+        </div>
+    </div>
+</div>
 
             <div class="venue-features anim-fade-up">
                 <div class="section-label" data-i18n="label_features">FEATURES</div>
