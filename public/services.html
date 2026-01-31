@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | 株式会社KATENRAKU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/background.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="fixed-vector-bg">
+        <svg id="scroll-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#00f2fe" />
+                    <stop offset="100%" stop-color="#4facfe" />
+                </linearGradient>
+                <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff0080" />
+                    <stop offset="100%" stop-color="#7928ca" />
+                </linearGradient>
+                <linearGradient id="neon-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f7971e" />
+                    <stop offset="100%" stop-color="#ffd200" />
+                </linearGradient>
+                <filter id="glow-intense" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+            </defs>
+
+            <g class="bg-grid" opacity="0.15">
+                <path d="M 0 200 L 1920 200 M 0 800 L 1920 800" stroke="#fff" stroke-width="1" />
+                <path d="M 400 0 L 400 1080 M 1520 0 L 1520 1080" stroke="#fff" stroke-width="1" />
+                <path d="M 0 1080 L 1920 0" stroke="#fff" stroke-width="0.5" />
+                <path d="M 0 0 L 1920 1080" stroke="#fff" stroke-width="0.5" />
+            </g>
+
+            <g class="data-cables" filter="url(#glow-intense)">
+                <path class="scroll-path cable-cyan" d="M -100,100 Q 600,100 800,400 T 1200,600 T 2000,500" stroke="url(#neon-cyan)" stroke-width="3" fill="none" />
+                <path class="scroll-path cable-pink" d="M -100,900 C 400,900 600,600 960,540 S 1500,200 2020,100" stroke="url(#neon-pink)" stroke-width="4" fill="none" />
+                <path class="scroll-path cable-gold" d="M 400,-100 Q 300,400 500,540 T 400,1200" stroke="url(#neon-gold)" stroke-width="2" fill="none" />
+                <path class="scroll-path cable-cyan" d="M 2020,800 Q 1600,800 1400,500 T 1000,300" stroke="url(#neon-cyan)" stroke-width="2" fill="none" />
+                <path class="scroll-path cable-pink" d="M 800,1200 Q 960,800 1120,1200" stroke="url(#neon-pink)" stroke-width="3" fill="none" />
+            </g>
+        </svg>
+        <div class="vignette-overlay"></div>
+    </div>
+
+<nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-jp">株式会社KATENRAKU</span>
+        </a>
+
+        <div class="nav-center">
+            <a href="company.html" class="nav-tab" data-i18n="link_company">会社概要</a>
+            <a href="services.html" class="nav-tab" data-i18n="link_services">事業内容</a>
+            <a href="contact.html" class="nav-tab" data-i18n="nav_contact">お問い合わせ</a>
+        </div>
+        
+        <div class="nav-right">
+            <div class="lang-pill">
+                <button onclick="switchLang('jp')" class="lang-btn active" data-lang="jp">JP</button>
+                <span class="sep">|</span>
+                <button onclick="switchLang('cn')" class="lang-btn" data-lang="cn">CN</button>
+                <span class="sep">|</span>
+                <button onclick="switchLang('en')" class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <button class="hamburger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-links">
+            <a href="index.html" class="mobile-link">TOP</a>
+            <a href="company.html" class="mobile-link" data-i18n="link_company">会社概要</a>
+            <a href="services.html" class="mobile-link" data-i18n="link_services">事業内容</a>
+            <a href="contact.html" class="mobile-link" data-i18n="nav_contact">お問い合わせ</a>
+            <a href="privacy.html" class="mobile-link" data-i18n="link_privacy">プライバシーポリシー</a>
+        </div>
+    </div>
+
+
+    <main>
+        <section class="page-hero">
+            <h1 class="hero-title fade-in-auto" data-i18n="page_services_title">SERVICES</h1>
+            <p class="hero-desc fade-in-auto delay-1" data-i18n="page_services_subtitle">会場・オフィス案内</p>
+        </section>
+
+        <section class="service-content">
+            
+            <div class="venue-intro anim-fade-up">
+                <h2 data-i18n="venue_intro_head">次世代オフィス空間</h2>
+                <p data-i18n="venue_intro_text">
+                    赤坂・六本木・青山エリアを自在に行き来できる都心の中心地に、<br>洗練された次世代オフィス空間が誕生。
+                </p>
+            </div>
+
+<div class="floor-plan-section anim-fade-up">
+                <div class="section-label" data-i18n="label_floorplan">FLOOR PLAN</div>
+                
+                <div class="blueprint-frame">
+                    <div class="blueprint-inner">
+                        
+                        <div class="gallery-viewport">
+                            <div class="gallery-wrapper" id="fp-gallery">
+                                <div class="gallery-slide">
+                                    <img src="https://placehold.co/1200x600/111/666?text=FLOOR+PLAN+1" alt="Floor Plan 1" class="fp-image">
+                                    <div class="slide-caption">Main Hall Layout</div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://placehold.co/1200x600/111/666?text=FLOOR+PLAN+2" alt="Floor Plan 2" class="fp-image">
+                                    <div class="slide-caption">Meeting Rooms</div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://placehold.co/1200x600/111/666?text=FLOOR+PLAN+3" alt="Floor Plan 3" class="fp-image">
+                                    <div class="slide-caption">Lounge Area</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fp-grid-overlay"></div>
+                        <div class="fp-marker m-1"></div>
+                        <div class="fp-marker m-2"></div>
+                        <div class="fp-marker m-3"></div>
+                        <div class="fp-marker m-4"></div>
+
+                        <button class="gal-btn gal-prev" onclick="moveGallery(-1)">
+                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button class="gal-btn gal-next" onclick="moveGallery(1)">
+                            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                        
+                        <div class="gal-indicators">
+                            <span class="gal-dot active" onclick="jumpGallery(0)"></span>
+                            <span class="gal-dot" onclick="jumpGallery(1)"></span>
+                            <span class="gal-dot" onclick="jumpGallery(2)"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="venue-features anim-fade-up">
+                <div class="section-label" data-i18n="label_features">FEATURES</div>
+                
+                <div class="features-grid-list">
+                    <div class="feat-card">
+                        <div class="feat-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/></svg>
+                        </div>
+                        <div class="feat-card-text">
+                            <h3 data-i18n="vf_1_title">複数駅利用可</h3>
+                            <p data-i18n="vf_1_desc">赤坂・六本木・溜池山王など複数駅利用可、都心を自在に繋ぐ利便性</p>
+                        </div>
+                    </div>
+
+                    <div class="feat-card">
+                        <div class="feat-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v9"/></svg>
+                        </div>
+                        <div class="feat-card-text">
+                            <h3 data-i18n="vf_2_title">多彩な共用スペース</h3>
+                            <p data-i18n="vf_2_desc">ミーティングルーム、共有ラウンジ、屋上テラスなど多彩な共用スペース</p>
+                        </div>
+                    </div>
+
+                    <div class="feat-card">
+                        <div class="feat-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                        </div>
+                        <div class="feat-card-text">
+                            <h3 data-i18n="vf_3_title">すぐに使える</h3>
+                            <p data-i18n="vf_3_desc">デスク・チェア・高速インターネット完備、すぐに使えるワークプレイス</p>
+                        </div>
+                    </div>
+
+                    <div class="feat-card">
+                        <div class="feat-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                        </div>
+                        <div class="feat-card-text">
+                            <h3 data-i18n="vf_4_title">快適で安心</h3>
+                            <p data-i18n="vf_4_desc">全室個別空調＆開閉可能な窓で、快適で安心なオフィス環境を実現</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="copyright">&copy; 2026 KATENRAKU Inc. All Rights Reserved.</div>
+        </footer>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

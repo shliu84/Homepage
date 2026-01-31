@@ -3,177 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社KATENRAKU | KATENRAKU Inc.</title>
+    <title>株式会社KATENRAKU | 華天楽</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/background.css"> <link rel="stylesheet" href="assets/css/style.css">      </head>
+<body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<div class="fixed-vector-bg">
+        <svg id="scroll-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#00f2fe" />
+                    <stop offset="100%" stop-color="#4facfe" />
+                </linearGradient>
+                <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff0080" />
+                    <stop offset="100%" stop-color="#7928ca" />
+                </linearGradient>
+                <linearGradient id="neon-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f7971e" />
+                    <stop offset="100%" stop-color="#ffd200" />
+                </linearGradient>
 
-    <style>
-        /* 强制隐藏滚动条，直到开屏动画结束，防止用户乱滚 */
-        body.loading { overflow: hidden; height: 100vh; }
-        
-        /* 确保 SVG 线条一开始是看不见的 */
-        .logo-path {
-            opacity: 0; /* JS 加载前隐藏，防止闪烁 */
-        }
-    </style>
-</head>
-<body class="font-sans antialiased loading">
+                <filter id="glow-intense" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+            </defs>
 
-    <div id="splash-screen" class="fixed inset-0 z-[9999] bg-[#1a1a1a] flex flex-col items-center justify-center">
-        <div class="relative w-32 h-32 md:w-40 md:h-40 mb-6">
-            <svg viewBox="0 0 100 100" class="w-full h-full overflow-visible">
-                <path class="logo-path" d="M30 20 V80" fill="none" stroke="#f4f2f0" stroke-width="1.5" stroke-linecap="square" />
-                <path class="logo-path" d="M30 50 L70 20" fill="none" stroke="#f4f2f0" stroke-width="1.5" stroke-linecap="square" />
-                <path class="logo-path" d="M30 50 L70 80" fill="none" stroke="#f4f2f0" stroke-width="1.5" stroke-linecap="square" />
-                <rect class="logo-path" x="10" y="10" width="80" height="80" fill="none" stroke="#f4f2f0" stroke-width="0.5" stroke-opacity="0.5" />
-            </svg>
+            <g class="bg-grid" opacity="0.15">
+                <path d="M 0 200 L 1920 200 M 0 800 L 1920 800" stroke="#fff" stroke-width="1" />
+                <path d="M 400 0 L 400 1080 M 1520 0 L 1520 1080" stroke="#fff" stroke-width="1" />
+                <path d="M 0 1080 L 1920 0" stroke="#fff" stroke-width="0.5" />
+                <path d="M 0 0 L 1920 1080" stroke="#fff" stroke-width="0.5" />
+            </g>
+
+            <g class="data-cables" filter="url(#glow-intense)">
+                
+                <path class="scroll-path cable-cyan" 
+                      d="M -100,100 Q 600,100 800,400 T 1200,600 T 2000,500" 
+                      stroke="url(#neon-cyan)" stroke-width="3" fill="none" />
+                
+                <path class="scroll-path cable-pink" 
+                      d="M -100,900 C 400,900 600,600 960,540 S 1500,200 2020,100" 
+                      stroke="url(#neon-pink)" stroke-width="4" fill="none" />
+
+                <path class="scroll-path cable-gold" 
+                      d="M 400,-100 Q 300,400 500,540 T 400,1200" 
+                      stroke="url(#neon-gold)" stroke-width="2" fill="none" />
+
+                <path class="scroll-path cable-cyan" 
+                      d="M 2020,800 Q 1600,800 1400,500 T 1000,300" 
+                      stroke="url(#neon-cyan)" stroke-width="2" fill="none" />
+
+                <path class="scroll-path cable-pink" 
+                      d="M 800,1200 Q 960,800 1120,1200" 
+                      stroke="url(#neon-pink)" stroke-width="3" fill="none" />
+            </g>
+        </svg>
+        <div class="vignette-overlay"></div>
+    </div>
+
+<nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-jp">株式会社KATENRAKU</span>
+        </a>
+
+        <div class="nav-center">
+            <a href="company.html" class="nav-tab" data-i18n="link_company">会社概要</a>
+            <a href="services.html" class="nav-tab" data-i18n="link_services">事業内容</a>
+            <a href="contact.html" class="nav-tab" data-i18n="nav_contact">お問い合わせ</a>
         </div>
         
-        <div class="splash-text opacity-0 text-[#f4f2f0] font-serif tracking-[0.3em] text-sm md:text-base font-light">
-            KATENRAKU
+        <div class="nav-right">
+            <div class="lang-pill">
+                <button onclick="switchLang('jp')" class="lang-btn active" data-lang="jp">JP</button>
+                <span class="sep">|</span>
+                <button onclick="switchLang('cn')" class="lang-btn" data-lang="cn">CN</button>
+                <span class="sep">|</span>
+                <button onclick="switchLang('en')" class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <button class="hamburger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-links">
+            <a href="index.html" class="mobile-link">TOP</a>
+            <a href="company.html" class="mobile-link" data-i18n="link_company">会社概要</a>
+            <a href="services.html" class="mobile-link" data-i18n="link_services">事業内容</a>
+            <a href="contact.html" class="mobile-link" data-i18n="nav_contact">お問い合わせ</a>
+            <a href="privacy.html" class="mobile-link" data-i18n="link_privacy">プライバシーポリシー</a>
         </div>
     </div>
-    <header class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference text-[#1a1a1a]">
-        <h1 class="text-lg font-serif tracking-widest font-bold"><a href="/">KATENRAKU</a></h1>
-        <nav class="hidden md:flex space-x-8 text-xs font-eng tracking-widest uppercase">
-            <a href="/company/" class="hover:opacity-50 transition-opacity">About</a>
-            <a href="/services/" class="hover:opacity-50 transition-opacity">Business</a>
-            <a href="/contact/" class="hover:opacity-50 transition-opacity">Contact</a>
-        </nav>
-        <div class="md:hidden w-6 h-4 flex flex-col justify-between cursor-pointer">
-            <span class="w-full h-[1px] bg-current"></span>
-            <span class="w-full h-[1px] bg-current"></span>
-        </div>
-    </header>
 
-    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center parallax-bg"
-         style="background-image: url('https://images.unsplash.com/photo-1604928141064-207cea6f571f?q=80&w=2400&auto=format&fit=crop');
-                filter: grayscale(100%) brightness(135%) contrast(85%) opacity(0.9);">
-    </div>
-    <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
-        
-        <div class="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
-            <div class="flex flex-col md:flex-row items-start md:items-end justify-between w-full h-[60vh]">
-                <div class="h-full flex items-start pt-20 md:pt-0">
-                    <h2 class="vertical-text text-3xl md:text-5xl font-serif leading-loose animate-text opacity-0">
-                        都市に、働く場所と、<br>感じる場所を。
-                    </h2>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-subtitle fade-in-auto" data-i18n="hero_badge">Global Business Solutions</span>
+                <h1 class="hero-title fade-in-auto delay-1" data-i18n="hero_title">
+                    境界を越え、<br><span class="gradient-text">未来を繋ぐ。</span>
+                </h1>
+                <p class="hero-desc fade-in-auto delay-2" data-i18n="hero_desc">
+                    不動産からテクノロジー、教育まで。<br>多角的な視点で企業のポテンシャルを最大化します。
+                </p>
+            </div>
+        </section>
+
+        <section class="bento-section">
+            <div class="section-header-clean anim-fade-up">
+                <h2 class="header-en">OUR BUSINESS</h2>
+                <span class="header-jp" data-i18n="service_title">事業内容</span>
+            </div>
+
+            <div class="bento-grid">
+                
+                <div class="card card-full-width card-real-estate anim-fade-up">
+                    <div class="re-text-area">
+                        <h3 class="re-title" data-i18n="prop_title">赤坂・六本木・青山エリア<br>次世代オフィス空間</h3>
+                        <p class="re-desc" data-i18n="prop_desc">
+                            赤坂・六本木・青山エリアを自在に行き来できる都心の中心地に、洗練された次世代オフィス空間が誕生。ビジネスの加速をサポートする環境を提供します。
+                        </p>
+                    </div>
+                    <div class="re-features-area">
+                        <div class="feature-grid">
+                            <div class="feat-item"><span class="feat-label">ACCESS</span><span class="feat-value" data-i18n="feat_1">駅近アクセス</span></div>
+                            <div class="feat-item"><span class="feat-label">FACILITY</span><span class="feat-value" data-i18n="feat_2">会議室・ラウンジ</span></div>
+                            <div class="feat-item"><span class="feat-label">INTERIOR</span><span class="feat-value" data-i18n="feat_3">家具・ネット完備</span></div>
+                            <div class="feat-item"><span class="feat-label">COMFORT</span><span class="feat-value" data-i18n="feat_4">個別空調・開閉窓</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-10 md:mt-0 md:text-right">
-                    <p class="font-eng text-xl md:text-2xl italic animate-fade-up opacity-0">Real Estate that Hosts Culture.</p>
-                    <div class="w-12 h-[1px] bg-black mt-6 ml-auto opacity-50"></div>
-                    <p class="mt-4 text-xs font-serif tracking-widest text-gray-600 animate-fade-up opacity-0">カテンラク株式会社</p>
+
+                <div class="card anim-fade-up">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                    <h3 data-i18n="biz_consult_title">経営コンサル</h3>
+                    <p data-i18n="biz_consult_desc">起業・経営コンサル、海外企業の日本市場参入および日本企業の海外展開サポート。</p>
                 </div>
+
+                <div class="card anim-fade-up">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/><path d="M4 21h16a2 2 0 0 0 2-2v-8"/></svg></div>
+                    <h3 data-i18n="biz_media_title">メディア・広告</h3>
+                    <p data-i18n="biz_media_desc">インターネット、電子出版、映像等の企画制作および各種メディアを活用した事業。</p>
+                </div>
+
+                <div class="card anim-fade-up">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                    <h3 data-i18n="biz_edu_title">教育・人材</h3>
+                    <p data-i18n="biz_edu_desc">企業研修、セミナー開催、および教育人材・労働者の派遣・マネジメント業務。</p>
+                </div>
+
+                <div class="card anim-fade-up">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h3 data-i18n="biz_ip_title">著作権管理</h3>
+                    <p data-i18n="biz_ip_desc">著作権、出版権、翻訳権等の管理、売買および出版に関する業務。</p>
+                </div>
+
+                <div class="card anim-fade-up">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <h3 data-i18n="biz_travel_title">旅行・手配</h3>
+                    <p data-i18n="biz_travel_desc">国内外の宿泊施設および鉄道・航空機・船舶等の手配業務。</p>
+                </div>
+
+                <div class="card anim-fade-up">
+                    <div class="card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <h3 data-i18n="biz_acc_title">経理代行</h3>
+                    <p data-i18n="biz_acc_desc">コンピュータによる委託会計計算業務および経理事務の管理代行。</p>
+                </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-24 bg-[#f4f2f0]">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="flex justify-between items-end mb-12">
-                <h3 class="text-2xl font-serif">お知らせ</h3>
-                <span class="text-xs font-eng">NEWS</span>
+        <footer id="contact">
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link" data-i18n="link_privacy">プライバシーポリシー</a>
             </div>
-            <div class="border-t border-gray-300">
-                <a href="#" class="block py-6 border-b border-gray-300 hover:bg-white transition-colors px-4 -mx-4 flex gap-4 items-center">
-                    <span class="text-xs font-eng text-gray-500">2024.10.20</span>
-                    <span class="text-sm font-serif">自社運営ギャラリー「Gallery K」にて企画展を開催</span>
-                </a>
-            </div>
-            <div class="mt-20 text-center">
-                <a href="/company/" class="inline-block border border-black px-12 py-4 text-xs font-eng tracking-widest hover:bg-black hover:text-white transition-colors">
-                    VIEW COMPANY
-                </a>
-            </div>
-        </div>
-    </section>
+            <div class="copyright">&copy; 2026 KATENRAKU Inc. All Rights Reserved.</div>
+        </footer>
+    </main>
 
-    <footer class="bg-[#1a1a1a] text-white py-12">
-        <div class="container mx-auto px-6 text-center text-xs font-eng text-gray-500">
-            <p>&copy; KATENRAKU Inc.</p>
-        </div>
-    </footer>
-
-    <script>
-        // 注册插件
-        gsap.registerPlugin(ScrollTrigger);
-
-        // 等待页面所有资源（包括图片）加载完毕再执行
-        window.addEventListener("load", () => {
-            
-            // 1. 初始化：计算 SVG 线条长度
-            const paths = document.querySelectorAll(".logo-path");
-            paths.forEach(path => {
-                const length = path.getTotalLength();
-                // 设置 dasharray 和 offset 为线条总长度 -> 这样线条就“隐藏”了
-                path.style.strokeDasharray = length;
-                path.style.strokeDashoffset = length;
-                path.style.opacity = 1; // 恢复可见性，准备开始动画
-            });
-
-            // 2. 创建时间轴 (Timeline)
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    // 动画结束后，允许页面滚动
-                    document.body.classList.remove("loading");
-                }
-            });
-
-            tl
-            // A. 线条描边动画
-            .to(".logo-path", {
-                strokeDashoffset: 0, // 偏移量归零 -> 线条画出来
-                duration: 1.5,
-                ease: "power2.inOut",
-                stagger: 0.1
-            })
-            // B. Logo 文字浮现
-            .to(".splash-text", {
-                opacity: 1,
-                y: -5,
-                duration: 1,
-            }, "-=0.5") // 提前 0.5秒开始
-            // C. 幕布拉起
-            .to("#splash-screen", {
-                yPercent: -100, // 向上移动 100%
-                duration: 1.2,
-                ease: "expo.inOut",
-                delay: 0.5
-            })
-            // D. 主页标题浮现 (衔接)
-            .to(".animate-text", {
-                y: 0,
-                opacity: 1,
-                duration: 1.5,
-                ease: "power3.out"
-            }, "-=0.8")
-            // E. 副标题浮现
-            .to(".animate-fade-up", {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                stagger: 0.2
-            }, "-=1.0");
-
-            // --- 页面其他的滚动视差效果 ---
-            gsap.to(".parallax-bg", {
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true
-                },
-                y: 100
-            });
-        });
-    </script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>

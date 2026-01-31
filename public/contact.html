@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | 株式会社KATENRAKU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/background.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="fixed-vector-bg">
+        <svg id="scroll-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="grad-mono" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#444444" stop-opacity="0.1"/>
+                </linearGradient>
+                <filter id="glow-soft">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+            </defs>
+            <g class="core-system" filter="url(#glow-soft)" opacity="0.4">
+                <circle cx="960" cy="480" r="300" stroke="url(#grad-mono)" stroke-width="1" fill="none" stroke-dasharray="2 10" class="ring-rotate-cw"/>
+                <circle cx="960" cy="480" r="500" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" fill="none" class="ring-rotate-ccw"/>
+            </g>
+            <g class="data-streams" opacity="0.3">
+                <path class="scroll-path" d="M 0,400 Q 960,1100 1920,400" stroke="#ffffff" stroke-width="1.5" fill="none" />
+                <path class="scroll-path" d="M 960,0 L 960,1080" stroke="#ffffff" stroke-width="1" fill="none" stroke-dasharray="10 30" />
+            </g>
+        </svg>
+        <div class="vignette-overlay"></div>
+    </div>
+
+<nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-jp">株式会社KATENRAKU</span>
+        </a>
+
+        <div class="nav-center">
+            <a href="company.html" class="nav-tab" data-i18n="link_company">会社概要</a>
+            <a href="services.html" class="nav-tab" data-i18n="link_services">事業内容</a>
+            <a href="contact.html" class="nav-tab" data-i18n="nav_contact">お問い合わせ</a>
+        </div>
+        
+        <div class="nav-right">
+            <div class="lang-pill">
+                <button onclick="switchLang('jp')" class="lang-btn active" data-lang="jp">JP</button>
+                <span class="sep">|</span>
+                <button onclick="switchLang('cn')" class="lang-btn" data-lang="cn">CN</button>
+                <span class="sep">|</span>
+                <button onclick="switchLang('en')" class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <button class="hamburger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-links">
+            <a href="index.html" class="mobile-link">TOP</a>
+            <a href="company.html" class="mobile-link" data-i18n="link_company">会社概要</a>
+            <a href="services.html" class="mobile-link" data-i18n="link_services">事業内容</a>
+            <a href="contact.html" class="mobile-link" data-i18n="nav_contact">お問い合わせ</a>
+            <a href="privacy.html" class="mobile-link" data-i18n="link_privacy">プライバシーポリシー</a>
+        </div>
+    </div>
+
+
+    <main>
+        <section class="contact-page-section">
+            <div class="page-header">
+                <h1 class="fade-in-auto" data-i18n="page_contact_title">CONTACT</h1>
+                <p class="fade-in-auto delay-1" data-i18n="page_contact_subtitle">お問い合わせ</p>
+            </div>
+
+            <div class="contact-container anim-fade-up">
+                
+                <div class="contact-info">
+                    <h3 data-i18n="contact_info_head">Get in Touch</h3>
+                    <p data-i18n="contact_info_text">
+                        事業に関するご質問、取材のご依頼など、<br>お気軽にお問い合わせください。
+                    </p>
+                    
+                    <div class="info-item">
+                        <span class="label">PHONE</span>
+                        <p class="outfit-font">03-5545-5234</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">FAX</span>
+                        <p class="outfit-font">03-5545-5234</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">EMAIL</span>
+                        <p class="outfit-font">info@katenraku.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        
+                        <div class="form-group">
+                            <label for="name" data-i18n="form_name">お名前</label>
+                            <input type="text" id="name" name="name" required placeholder="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-i18n="form_email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-i18n="form_message">お問い合わせ内容</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Message"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span data-i18n="form_submit">送信する</span>
+                            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+
+                        <p id="form-status"></p>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="copyright">&copy; 2026 KATENRAKU Inc. All Rights Reserved.</div>
+        </footer>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
